@@ -9,7 +9,7 @@ $(document).ready(() => {
 	.attack(1)
 	.decay(1)
 	.sustain(1)
-	.release(2).echo(2, 1/6, .8).color("red").spectrum().play()`);
+	.release(2).echo(2, 1/6, .8).color("gray").spectrum().play()`);
 		// strudel.setVisual('punchcard');
 	});
 
