@@ -2,13 +2,124 @@
 <html lang="en">
 	<!-- <script src="https://unpkg.com/@strudel/web@1.0.3"></script> -->
 	<!-- Try this import instead -->
-	<script src="https://unpkg.com/@strudel/web"></script>
-	<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
+
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Punchy Monica</title>
+
+		<script src="https://unpkg.com/@strudel/web"></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+		<script src="js/script.js"></script>
+	</head>
 
 	<body>
-		<button id="play">play</button>
-		<button id="stop">stop</button>
+		<!-- <button id="play">play</button>
+		<button id="stop">stop</button> -->
+		<span id="title">PUNCHY MONICA</span>
+		<div id="buttons">
+			<table id="controls">
+				<tr>
+					<td><button id="play">P</button></td>
+					<td><button id="stop">S</button></td>
+				</tr>
+				<tr>
+					<td class="table-cell-white">
+						<div>1</div>
+					</td>
+					<td class="table-cell-white">
+						<div>2</div>
+					</td>
+					<td class="table-cell-white">
+						<div>3</div>
+					</td>
+					<td class="table-cell-white">
+						<div>4</div>
+					</td>
+					<td class="table-cell-white">
+						<div>5</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button>A</button>
+					</td>
+					<td>
+						<button>D</button>
+					</td>
+					<td>
+						<button>S</button>
+					</td>
+					<td>
+						<button>R</button>
+					</td>
+					<td>
+						<button>E</button>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div id="g1">
+				<div>
+					<button>+</button>
+					<button>a</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>b</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>c</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>d</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>e</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>S</button>
+					<button>-</button>
+				</div>
+			</div>
+			<br>
+			<div id="g2">
+				<div>
+					<button>+</button>
+					<button>a</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>b</button>
+					<button>-</button>
+				</div>
+
+				<div>
+					<button>+</button>
+					<button>S</button>
+					<button>-</button>
+				</div>
+			</div>
+		</div>
 	</body>
+
+	<link rel="stylesheet" href="css/style.css">
 
 </html>
