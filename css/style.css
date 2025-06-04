@@ -38,11 +38,11 @@ body #controls td button {
 }
 
 body #controls td #play {
-	background-color: green;
+	background-color: beige;
 }
 
 body #controls td #stop {
-	background-color: red;
+	background-color: wheat;
 }
 
 body #controls td #attack,
