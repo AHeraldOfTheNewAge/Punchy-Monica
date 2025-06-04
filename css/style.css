@@ -19,39 +19,46 @@ button {
 }
 
 
-body #buttons #controls {
+body #controls {
 	border-collapse: collapse;
 }
 
-body #buttons #controls td {
+body #controls td {
 	border: 1px solid black;
 }
 
-body #buttons #controls td:not(.table-cell-white) {
+body #controls td:not(.table-cell-white) {
 	background-color: #c1c1c1;
 }
 
-body #buttons #controls td button {
+body #controls td button {
 	background-color: white;
 	margin-top: 8px;
 	margin-right: 10px;
 }
 
-body #buttons #controls td #play {
+body #controls td #play {
 	background-color: green;
 }
 
-body #buttons #controls td #stop {
+body #controls td #stop {
 	background-color: red;
 }
 
-body #buttons #g1,
-body #buttons #g2 {
-	background-color: #c1c1c1;
+body #controls td #attack,
+body #controls td #decay,
+body #controls td #sustain,
+body #controls td #release,
+body #controls td #echo {
+	/* background-color: blue; */
 }
 
-body #buttons #g1 button,
-body #buttons #g2 button {
+body #controls td #release {
+	background-color: pink;
+}
+
+body #g1 button,
+body #g2 button {
 	background: #333;
 	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4),
 		inset -1px -1px 2px rgba(255, 255, 255, 0.1);

@@ -15,109 +15,146 @@
 	</head>
 
 	<body>
-		<!-- <button id="play">play</button>
-		<button id="stop">stop</button> -->
 		<span id="title">PUNCHY MONICA</span>
-		<div id="buttons">
-			<table id="controls">
-				<tr>
-					<td><button id="play">P</button></td>
-					<td><button id="stop">S</button></td>
-				</tr>
-				<tr>
-					<td class="table-cell-white">
-						<div>1</div>
-					</td>
-					<td class="table-cell-white">
-						<div>2</div>
-					</td>
-					<td class="table-cell-white">
-						<div>3</div>
-					</td>
-					<td class="table-cell-white">
-						<div>4</div>
-					</td>
-					<td class="table-cell-white">
-						<div>5</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button>A</button>
-					</td>
-					<td>
-						<button>D</button>
-					</td>
-					<td>
-						<button>S</button>
-					</td>
-					<td>
-						<button>R</button>
-					</td>
-					<td>
-						<button>E</button>
-					</td>
-				</tr>
-			</table>
-			<br>
-			<div id="g1">
-				<div>
-					<button>+</button>
-					<button>a</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>b</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>c</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>d</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>e</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>S</button>
-					<button>-</button>
-				</div>
-			</div>
-			<br>
-			<div id="g2">
-				<div>
-					<button>+</button>
-					<button>a</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>b</button>
-					<button>-</button>
-				</div>
-
-				<div>
-					<button>+</button>
-					<button>S</button>
-					<button>-</button>
-				</div>
-			</div>
-		</div>
+		<br><br>
+		<table id="controls">
+			<tr>
+				<td class="table-cell-white">
+					<div>1</div>
+				</td>
+				<td class="table-cell-white">
+					<div>2</div>
+				</td>
+				<td class="table-cell-white">
+					<div>3</div>
+				</td>
+				<td class="table-cell-white">
+					<div>4</div>
+				</td>
+				<td class="table-cell-white">
+					<div>5</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="attack">A</button>
+				</td>
+				<td>
+					<button id="decay">D</button>
+				</td>
+				<td>
+					<button id="sustain">S</button>
+				</td>
+				<td>
+					<button id="release">R</button>
+				</td>
+				<td>
+					<button id="echo">E</button>
+				</td>
+				<td class="table-cell-white">
+					OUT
+				</td>
+			</tr>
+			<tr>
+				<td id="attackD" class="table-cell-white">
+					15
+				</td>
+				<td id="decayD" class="table-cell-white">
+					14
+				</td>
+				<td id="sustainD" class="table-cell-white">
+					14
+				</td>
+				<td id="releaseD" class="table-cell-white">
+					3
+				</td>
+				<td id="echoD" class="table-cell-white">
+					2
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n1" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n1p" class="noteD">+</button>
+				</td>
+				<td>
+					<button id="g2n1" class="note">0</button>
+				</td>
+				<td>
+					<button id="g2n1p" class="noteD">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n2" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n2p" class="noteD">+</button>
+				</td>
+				<td>
+					<button id="g2n2" class="note">0</button>
+				</td>
+				<td>
+					<button id="g2n2p" class="noteD">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n3" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n3p" class="noteD">+</button>
+				</td>
+				<td>
+					<button id="g2n3" class="note">0</button>
+				</td>
+				<td>
+					<button id="g2n3p" class="noteD">+</button>
+				</td>
+				<td id="g2SLD" class="table-cell-white">
+					2
+				</td>
+				<td id="g2SL">
+					<button>SL</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n4" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n4p" class="noteD">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n5" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n5p" class="noteD">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="g1n6" class="note">0</button>
+				</td>
+				<td>
+					<button id="g1n6p" class="noteD">+</button>
+				</td>
+				<td id="g1SLD" class="table-cell-white">
+					2
+				</td>
+				<td id="g1SL">
+					<button>SL</button>
+				</td>
+			</tr>
+			<tr>
+				<td><button id="play">P</button></td>
+				<td><button id="stop">S</button></td>
+			</tr>
+		</table>
 	</body>
 
 	<link rel="stylesheet" href="css/style.css">

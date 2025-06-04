@@ -13,8 +13,52 @@ $(document).ready(() => {
 		// strudel.setVisual('punchcard');
 	});
 
+	$('#attack').on('click', () => {
+		var noteGroup1 = [];
+
+		for (var index = 1; index <= 6; index++) {
+			var note = $('#g1n' + index).text();
+
+			if (note == 0) {
+				continue;
+			}
+
+			noteGroup1.push(note);
+		}
+
+		var noteGroup2 = [];
+
+		for (var index = 1; index <= 3; index++) {
+			var note = $('#g2n' + index).text();
+
+			if (note == 0) {
+				continue;
+			}
+
+			noteGroup2.push(note);
+		}
+
+		console.log(noteGroup1, noteGroup2);
+	});
+
 	$('#stop').on('click', () => {
 		hush();
 		console.log('stop');
+	});
+
+	$('.note').on('click', (evt) => { // Reset note
+		$('#' + evt.target.id).text('0');
+	});
+
+	$('.noteD').on('click', (evt) => { // Up the note
+		var idTarget = evt.target.id.replace('p', '');
+		var currentValue = parseInt($('#' + idTarget).text());
+		currentValue++;
+
+		if (currentValue > 99) {
+			currentValue = 0;
+		}
+
+		$('#' + idTarget).text(currentValue);
 	});
 });
