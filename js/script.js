@@ -15,12 +15,17 @@ $(document).ready(() => {
 
 	$('#play').on('click', () => {
 		var noteGroup1 = [];
+		var isAnyValidNote = false;
 
 		for (var index = 0; index <= 5; index++) {
 			var note = $('#g1n' + index).text();
 
 			if (note == 0) {
 				continue;
+			}
+
+			if (note != '-') {
+				isAnyValidNote = true;
 			}
 
 			noteGroup1.push(note);
@@ -35,11 +40,15 @@ $(document).ready(() => {
 				continue;
 			}
 
+			if (note != '-') {
+				isAnyValidNote = true;
+			}
+
 			noteGroup2.push(note);
 		}
 
-		if (!noteGroup1.length && !noteGroup2.length) {
-			alert('No notes punched in!');
+		if (!isAnyValidNote) {
+			alert('Punch-in some notes!');
 
 			return;
 		}
@@ -79,8 +88,6 @@ $(document).ready(() => {
 		toEval = `note("${toEval}").sound("sawtooth").lpf(400).attack(1).decay(1).sustain(1).release(2).echo(2, 1/6, .8).color("gray").spectrum()`;
 
 		strudel.evaluate(toEval);
-
-		console.log(toEval);
 	});
 
 	$('#stop').on('click', () => {
@@ -95,11 +102,21 @@ $(document).ready(() => {
 
 	$('.noteD').on('click', (evt) => { // Up the note
 		var idTarget = evt.target.id.replace('p', '');
-		var currentValue = parseInt($('#' + idTarget).text());
+		var currentValue = $('#' + idTarget).text();
+
+		if (currentValue == '-') {
+			currentValue = 0;
+
+			$('#' + idTarget).text(currentValue);
+
+			return;
+		}
+
+		currentValue = parseInt(currentValue);
 		currentValue++;
 
 		if (currentValue > 99) {
-			currentValue = 0;
+			currentValue = '-';
 		}
 
 		$('#' + idTarget).text(currentValue);
