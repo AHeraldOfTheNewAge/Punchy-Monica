@@ -20,7 +20,7 @@ $(document).ready(() => {
 		for (var index = 0; index <= 5; index++) {
 			var note = $('#g1n' + index).text();
 
-			if (note == 0) {
+			if (note == 'X') {
 				continue;
 			}
 
@@ -36,7 +36,7 @@ $(document).ready(() => {
 		for (var index = 3; index <= 5; index++) {
 			var note = $('#g2n' + index).text();
 
-			if (note == 0) {
+			if (note == 'X') {
 				continue;
 			}
 
@@ -48,7 +48,7 @@ $(document).ready(() => {
 		}
 
 		if (!isAnyValidNote) {
-			alert('Punch-in some notes!');
+			alert('Punch-in some numbers!');
 
 			return;
 		}
@@ -97,15 +97,15 @@ $(document).ready(() => {
 	});
 
 	$('.note').on('click', (evt) => { // Reset note
-		$('#' + evt.target.id).text('0');
+		$('#' + evt.target.id).text('X');
 	});
 
 	$('.noteD').on('click', (evt) => { // Up the note
 		var idTarget = evt.target.id.replace('p', '');
 		var currentValue = $('#' + idTarget).text();
 
-		if (currentValue == '-') {
-			currentValue = 0;
+		if (currentValue == '-' || currentValue == 'X') {
+			currentValue = currentValue == 'X' ? '-' : 1;
 
 			$('#' + idTarget).text(currentValue);
 
@@ -116,7 +116,7 @@ $(document).ready(() => {
 		currentValue++;
 
 		if (currentValue > 99) {
-			currentValue = '-';
+			currentValue = 'X';
 		}
 
 		$('#' + idTarget).text(currentValue);
