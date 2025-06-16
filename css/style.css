@@ -18,13 +18,16 @@ button {
 	border: 1px solid black;
 }
 
-
 body #controls {
 	border-collapse: collapse;
 }
 
 body #controls td {
 	border: 1px solid black;
+}
+
+body #controls td.small-font {
+	font-size: 8px;
 }
 
 body #controls td:not(.table-cell-white) {

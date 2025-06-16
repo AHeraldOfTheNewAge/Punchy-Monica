@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="en">
-	<!-- <script src="https://unpkg.com/@strudel/web@1.0.3"></script> -->
-	<!-- Try this import instead -->
-
 
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Punchy Monica</title>
+		<title>Punchee Monica</title>
 
 		<script src="https://unpkg.com/@strudel/web"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -15,7 +12,7 @@
 	</head>
 
 	<body>
-		<span id="title">WAVES ON MY M</span>
+		<span id="title">PUNCHEE MONICA</span>
 		<br><br>
 		<table id="controls">
 			<tr>
@@ -57,16 +54,16 @@
 			</tr>
 			<tr>
 				<td id="attackD" class="table-cell-white">
-					15
+					1
 				</td>
 				<td id="decayD" class="table-cell-white">
-					14
+					0.5
 				</td>
 				<td id="sustainD" class="table-cell-white">
-					14
+					0.8
 				</td>
 				<td id="releaseD" class="table-cell-white">
-					3
+					2
 				</td>
 				<td id="echoD" class="table-cell-white">
 					2
@@ -145,6 +142,10 @@
 				<td id="g1SL">
 					<button>SL</button>
 				</td>
+			</tr>
+			<tr>
+				<td class="table-cell-white small-font" id="waveD">sawtooth</td>
+				<td><button id="wave">W</button></td>
 			</tr>
 			<tr>
 				<td><button id="play">&uarr;</button></td>

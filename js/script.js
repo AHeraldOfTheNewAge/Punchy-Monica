@@ -85,15 +85,20 @@ $(document).ready(() => {
 			toEval += noteGroup2;
 		}
 
-		toEval = `note("${toEval}").sound("sawtooth").lpf(400).attack(1).decay(1).sustain(1).release(2).echo(2, 1/6, .8).color("gray").spectrum()`;
+		var wave = $('#waveD').text();
+		var attack = $('#attackD').text();
+		var decay = $('#decayD').text();
+		var sustain = $('#sustainD').text();
+		var release = $('#releaseD').text();
+
+		toEval = `note("${toEval}").sound("${wave}").lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release}).echo(2, 1/6, .8).color("gray").spectrum()`;
 
 		strudel.evaluate(toEval);
+		console.log(toEval);
 	});
 
 	$('#stop').on('click', () => {
 		strudel.evaluate('hush()');
-		// hush();
-		console.log('stop');
 	});
 
 	$('.note').on('click', (evt) => { // Reset note
@@ -132,9 +137,7 @@ $(document).ready(() => {
 			return;
 		}
 
-		currentValue++;
-
-		$('#g1SLD').text(currentValue);
+		$('#g1SLD').text(currentValue + 1);
 	});
 
 	$('#g2SL').on('click', () => {
@@ -146,8 +149,96 @@ $(document).ready(() => {
 			return;
 		}
 
-		currentValue++;
+		$('#g2SLD').text(currentValue + 1);
+	});
 
-		$('#g2SLD').text(currentValue);
+	$('#attack').on('click', () => {
+		var currentValue = parseFloat($('#attackD').text());
+
+		if (currentValue == 5) {
+			$('#attackD').text(0);
+
+			return;
+		}
+
+		$('#attackD').text(currentValue + 0.25);
+	});
+
+	$('#decay').on('click', () => {
+		var currentValue = parseFloat($('#decayD').text());
+
+		if (currentValue == 3) {
+			$('#decayD').text(0);
+
+			return;
+		}
+
+		$('#decayD').text(currentValue + 0.25);
+	});
+
+	$('#sustain').on('click', () => {
+		var currentValue = parseFloat($('#sustainD').text());
+
+		if (currentValue == 1) {
+			$('#sustainD').text(0);
+
+			return;
+		}
+
+		$('#sustainD').text((currentValue + 0.05).toFixed(2));
+	});
+
+	$('#release').on('click', () => {
+		var currentValue = parseFloat($('#releaseD').text());
+
+		if (currentValue == 5) {
+			$('#releaseD').text(0);
+
+			return;
+		}
+
+		$('#releaseD').text(currentValue + 0.5);
+	});
+
+	$('#echo').on('click', () => {
+		return; // TODO -> must find a way to do this properly!
+
+		var currentValue = $('#echoD').text();
+
+		if (currentValue == '2, 1/6, .8') {
+			$('#echoD').text(0);
+
+			return;
+		}
+
+		if (currentValue == '0') {
+			$('#echoD').text(1);
+
+			return;
+		}
+		$('#releaseD').text(currentValue);
+	});
+
+	$('#wave').on('click', () => {
+		var currentValue = $('#waveD').text();
+
+		switch (currentValue) {
+			case 'sawtooth':
+				$('#waveD').text('square');
+
+				break;
+			case 'square':
+				$('#waveD').text('triangle');
+
+				break;
+			case 'triangle':
+				$('#waveD').text('sine');
+
+				break;
+			default:
+				$('#waveD').text('sawtooth');
+
+				break;
+		}
 	});
 });
