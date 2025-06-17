@@ -46,9 +46,9 @@
 					<button id="release">R</button>
 				</td>
 				<td>
-					<button id="echo">E</button>
+					<button id="fx">FX</button>
 				</td>
-				<td class="table-cell-white">
+				<td id='output' class="table-cell-white">
 					OUT
 				</td>
 			</tr>
@@ -149,12 +149,14 @@
 			</tr>
 			<tr>
 				<td><button id="play">&uarr;</button></td>
-				<td><button id="stop">P</button></td>
+				<td><button id="stop">p</button></td>
 			</tr>
 			<tr>
-				<td class="table-cell-white">input</td>
+				<td id='input' class="table-cell-white active">input</td>
 			</tr>
 		</table>
+
+		<a id="help" onclick="alert('No help, find it out yourself!')">?</a>
 	</body>
 
 	<link rel="stylesheet" href="css/style.css">

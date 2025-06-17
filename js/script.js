@@ -94,11 +94,16 @@ $(document).ready(() => {
 		toEval = `note("${toEval}").sound("${wave}").lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release}).echo(2, 1/6, .8).color("gray").spectrum()`;
 
 		strudel.evaluate(toEval);
-		console.log(toEval);
+
+		$('#output').addClass('active');
+		$('#input').removeClass('active');
 	});
 
 	$('#stop').on('click', () => {
 		strudel.evaluate('hush()');
+
+		$('#input').addClass('active');
+		$('#output').removeClass('active');
 	});
 
 	$('.note').on('click', (evt) => { // Reset note
@@ -200,7 +205,7 @@ $(document).ready(() => {
 		$('#releaseD').text(currentValue + 0.5);
 	});
 
-	$('#echo').on('click', () => {
+	$('#fx').on('click', () => {
 		return; // TODO -> must find a way to do this properly!
 
 		var currentValue = $('#echoD').text();
