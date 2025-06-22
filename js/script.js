@@ -33,7 +33,7 @@ $(document).ready(() => {
 
 		var noteGroup2 = [];
 
-		for (var index = 3; index <= 5; index++) {
+		for (var index = 0; index <= 3; index++) {
 			var note = $('#g2n' + index).text();
 
 			if (note == 'X') {
@@ -90,9 +90,18 @@ $(document).ready(() => {
 		var decay = $('#decayD').text();
 		var sustain = $('#sustainD').text();
 		var release = $('#releaseD').text();
+		var fx = '.echo(2, 1/6, .8)';
 
-		toEval = `note("${toEval}").sound("${wave}").lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release}).echo(2, 1/6, .8).color("gray").spectrum()`;
+		switch ($('#fxD').text()) {
+			case 'echo2':
+				fx = '.echo(5, 2/6, .5)';
 
+				break;
+		}
+
+		toEval = `note("${toEval}").sound("${wave}").lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release})${fx}.jux(rev).color("blue").spectrum()`;
+
+		console.log(toEval);
 		strudel.evaluate(toEval);
 
 		$('#output').addClass('active');
@@ -206,22 +215,20 @@ $(document).ready(() => {
 	});
 
 	$('#fx').on('click', () => {
-		return; // TODO -> must find a way to do this properly!
+		var currentValue = $('#fxD').text();
 
-		var currentValue = $('#echoD').text();
+		console.log(currentValue);
 
-		if (currentValue == '2, 1/6, .8') {
-			$('#echoD').text(0);
+		switch (currentValue) {
+			case 'echo1':
+				$('#fxD').text('echo2');
 
-			return;
+				break;
+			case 'echo2':
+				$('#fxD').text('echo1');
+
+				break;
 		}
-
-		if (currentValue == '0') {
-			$('#echoD').text(1);
-
-			return;
-		}
-		$('#releaseD').text(currentValue);
 	});
 
 	$('#wave').on('click', () => {

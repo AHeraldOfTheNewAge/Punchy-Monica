@@ -9,10 +9,16 @@ body {
 	word-break: break-all;
 }
 
+#help {
+	position: fixed;
+	right: 7px;
+	top: 5px;
+}
+
 #title {
-	font-weight: bold;
-	font-size: 40px;
 	word-break: break-all;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 button {
@@ -27,6 +33,7 @@ button {
 button:active {
 	/* Oh yeaaaaaaaaaaa */
 	transform: rotate(180deg);
+	color: crimson;
 }
 
 #controls {
@@ -48,29 +55,11 @@ button:active {
 }
 
 #controls td #play {
-	background-color: coral;
+	background-color: yellow;
 }
 
-#controls td #stop {
-	background-color: indianred;
-}
-
-#controls td #fx {
-	background-color: antiquewhite;
-}
-
-#controls td[id='input'].active {
-	color: indianred;
-	font-weight: bold;
-}
-
+#controls td[id='input'].active,
 #controls td[id='output'].active {
-	color: coral;
+	color: crimson;
 	font-weight: bold;
-}
-
-#help {
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
 }
