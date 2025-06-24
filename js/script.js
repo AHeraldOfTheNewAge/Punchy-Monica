@@ -1,17 +1,42 @@
+// Request fullscreen
+function enterFullscreen() {
+	const element = document.documentElement; // or document.body
+
+	if (element.requestFullscreen) {
+		element.requestFullscreen();
+	} else if (element.webkitRequestFullscreen) { // Safari
+		element.webkitRequestFullscreen();
+	} else if (element.mozRequestFullScreen) { // Firefox
+		element.mozRequestFullScreen();
+	} else if (element.msRequestFullscreen) { // IE/Edge
+		element.msRequestFullscreen();
+	}
+}
+
+// Exit fullscreen
+function exitFullscreen() {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.webkitExitFullscreen) {
+		document.webkitExitFullscreen();
+	} else if (document.mozCancelFullScreen) {
+		document.mozCancelFullScreen();
+	} else if (document.msExitFullscreen) {
+		document.msExitFullscreen();
+	}
+}
+
+// Toggle fullscreen
+function toggleFullscreen() {
+	if (!document.fullscreenElement) {
+		enterFullscreen();
+	} else {
+		exitFullscreen();
+	}
+}
+
 $(document).ready(() => {
 	initStrudel();
-
-	// document.getElementById('play').addEventListener('click', () => {
-	// 	// Try _punchcard again. The issue might be that the Strudel context
-	// 	// wasn't fully initialized for inline visuals without a target.
-	// 	strudel.evaluate(`note("c3 bb2 f3 eb3 bb4, [55 57]/6")
-	// .sound("sawtooth").lpf(400)
-	// .attack(1)
-	// .decay(1)
-	// .sustain(1)
-	// .release(2).echo(2, 1/6, .8).color("gray").spectrum()`);
-	// 	// strudel.setVisual('punchcard');
-	// });
 
 	$('#play').on('click', () => {
 		var noteGroup1 = [];
@@ -86,6 +111,7 @@ $(document).ready(() => {
 		}
 
 		var wave = $('#waveD').text();
+		var cpm = $('#cpmD').text();
 		var attack = $('#attackD').text();
 		var decay = $('#decayD').text();
 		var sustain = $('#sustainD').text();
@@ -97,11 +123,14 @@ $(document).ready(() => {
 				fx = '.echo(5, 2/6, .5)';
 
 				break;
+			case 'crush':
+				fx = '.crush(8)';
+
+				break;
 		}
 
-		toEval = `note("${toEval}").sound("${wave}").lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release})${fx}.jux(rev).color("blue").spectrum()`;
+		toEval = `note("${toEval}").sound("${wave}").cpm(${cpm}).lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release})${fx}.jux(rev).color("blue").spectrum()`;
 
-		console.log(toEval);
 		strudel.evaluate(toEval);
 
 		$('#output').addClass('active');
@@ -211,7 +240,7 @@ $(document).ready(() => {
 			return;
 		}
 
-		$('#releaseD').text(currentValue + 0.5);
+		$('#releaseD').text((currentValue + 0.1).toFixed(1));
 	});
 
 	$('#fx').on('click', () => {
@@ -225,6 +254,10 @@ $(document).ready(() => {
 
 				break;
 			case 'echo2':
+				$('#fxD').text('crush');
+
+				break;
+			case 'crush':
 				$('#fxD').text('echo1');
 
 				break;
@@ -252,5 +285,17 @@ $(document).ready(() => {
 
 				break;
 		}
+	});
+
+	$('#cpm').on('click', () => {
+		var currentValue = parseFloat($('#cpmD').text());
+
+		if (currentValue == 120) {
+			$('#cpmD').text(10);
+
+			return;
+		}
+
+		$('#cpmD').text(currentValue + 1);
 	});
 });

@@ -9,16 +9,16 @@ body {
 	word-break: break-all;
 }
 
+#fullscreen {
+	position: fixed;
+	right: 22px;
+	top: 5px;
+}
+
 #help {
 	position: fixed;
 	right: 7px;
 	top: 5px;
-}
-
-#title {
-	word-break: break-all;
-	font-size: 30px;
-	font-weight: bold;
 }
 
 button {

@@ -15,21 +15,11 @@
 		<br><br>
 		<table id="controls">
 			<tr>
-				<td class="table-cell-white">
-					<div>1</div>
-				</td>
-				<td class="table-cell-white">
-					<div>2</div>
-				</td>
-				<td class="table-cell-white">
-					<div>3</div>
-				</td>
-				<td class="table-cell-white">
-					<div>4</div>
-				</td>
-				<td class="table-cell-white">
-					<div>5</div>
-				</td>
+				<td class="table-cell-white">1</td>
+				<td class="table-cell-white">2</td>
+				<td class="table-cell-white">3</td>
+				<td class="table-cell-white">4</td>
+				<td class="table-cell-white">5</td>
 			</tr>
 			<tr>
 				<td>
@@ -47,23 +37,13 @@
 				<td>
 					<button id="fx">FX</button>
 				</td>
-				<td id='output' class="table-cell-white">
-					OUT
-				</td>
+				<td id='output' class="table-cell-white">OUT</td>
 			</tr>
 			<tr>
-				<td id="attackD" class="table-cell-white">
-					1
-				</td>
-				<td id="decayD" class="table-cell-white">
-					0.5
-				</td>
-				<td id="sustainD" class="table-cell-white">
-					0.8
-				</td>
-				<td id="releaseD" class="table-cell-white">
-					2
-				</td>
+				<td id="attackD" class="table-cell-white">1</td>
+				<td id="decayD" class="table-cell-white">0.5</td>
+				<td id="sustainD" class="table-cell-white">0.8</td>
+				<td id="releaseD" class="table-cell-white">1</td>
 				<td id="fxD" class="table-cell-white">echo1</td>
 			</tr>
 			<tr>
@@ -149,23 +129,26 @@
 			<tr>
 				<td class="table-cell-white small-font" id="waveD">sawtooth</td>
 				<td><button id="wave">W</button></td>
+				<td id="cpmD" class="table-cell-white">30</td>
+				<td>
+					<button id="cpm">C</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button id="play">&uarr;</button></td>
-				<td><button id="stop">p</button></td>
-				<td id="cpmD" class="table-cell-white">1</td>
-				<td id="cpm">
-					<button>B</button>
+				<td>
+					<button id="play">&uarr;</button>
 				</td>
+				<td>
+					<button id="stop">p</button>
+				</td>
+				<td colspan="2" class="table-cell-white small-font">PUNCHEE MONICA</td>
 			</tr>
 			<tr>
 				<td id='input' class="table-cell-white active">IN</td>
 			</tr>
 		</table>
-		<br>
-		<br>
-		<span id="title">PUNCHEE MONICA</span>
 
+		<a id="fullscreen" onclick="toggleFullscreen()">F</a>
 		<a id="help" onclick="alert('No help, find it out yourself!')">?</a>
 	</body>
 
