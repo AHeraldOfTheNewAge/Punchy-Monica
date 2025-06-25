@@ -127,6 +127,10 @@ $(document).ready(() => {
 				fx = '.crush(8)';
 
 				break;
+			case 'clean':
+				fx = '';
+
+				break;
 		}
 
 		toEval = `note("${toEval}").sound("${wave}").cpm(${cpm}).lpf(400).attack(${attack}).decay(${decay}).sustain(${sustain}).release(${release})${fx}.jux(rev).color("blue").spectrum()`;
@@ -246,8 +250,6 @@ $(document).ready(() => {
 	$('#fx').on('click', () => {
 		var currentValue = $('#fxD').text();
 
-		console.log(currentValue);
-
 		switch (currentValue) {
 			case 'echo1':
 				$('#fxD').text('echo2');
@@ -258,6 +260,10 @@ $(document).ready(() => {
 
 				break;
 			case 'crush':
+				$('#fxD').text('clean');
+
+				break;
+			case 'clean':
 				$('#fxD').text('echo1');
 
 				break;
